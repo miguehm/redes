@@ -1,3 +1,4 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+- [Información](./info.md)
+- [T: Def. Redes de Computadoras](./tarea-redes-def.md)
