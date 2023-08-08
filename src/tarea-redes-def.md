@@ -1,3 +1,5 @@
+# Definiciones de Red de Computadoras
+
 <!-- <center> -->
 <!-- <br/> -->
 <!-- <br/> -->
@@ -26,8 +28,6 @@
 <!-- <br/> -->
 <!-- <br/> -->
 <!-- </center> -->
-
-# Definiciones de Red de Computadoras
 
 ## Definición 1
 
