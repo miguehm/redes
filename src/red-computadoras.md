@@ -10,11 +10,11 @@ Una red de computadoras es una serie de dispositivos conectados entre si, con la
 
 La solución trivial seria conectar a todos los dispositivos con todos, pero es altamente ineficiente.
 
-![Todos contra todos](.images/AudreFlooded111-1.png) 
+![Todos contra todos](./images/AudreFlooded111-1.png) 
 
 Una solución es asignar un **conmutador** para descongestionar el trafico.
 
-![Conmutador](.images/AudreFlooded111-2.png) 
+![Conmutador](./images/AudreFlooded111-2.png) 
 
 En los inicios de la telefonía el conmutador era una persona que gestionaba las conexiones a mano.
 
@@ -22,7 +22,7 @@ Posteriormente se comenzó a usar un numero de teléfono para que un conmutador 
 
 También las centrales que se encuentren en dos zonas diferentes se pueden comunicar entre si.
 
-![Conmutador comunicado con otro](.images/AudreFlooded111-3.png) 
+![Conmutador comunicado con otro](./images/AudreFlooded111-3.png) 
 
 <!-- #AudreFlooded111 -->
 
@@ -40,7 +40,7 @@ Es la capacidad de las plataformas digitales de intercambiar información de man
 
 ## Modelo Cliente Servidor
 
-![Implica solicitudes y respuestas](./images/BrenkSucks7-1.png) 
+![Implica solicitudes y respuestas](./images/BrenkSucks7-1.png)
 
 <!-- #BrenkSucks7 -->
 
