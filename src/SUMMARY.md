@@ -7,3 +7,4 @@
 # Practicas
 
 - [P1: Comandos Windows](./practices/prac1.md)
+- [P2: Comandos Win & Linux](./practices/prac2.md)
