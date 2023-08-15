@@ -1,6 +1,511 @@
-# Práctica 2
+# P2: Comandos Windows y Linux
 
 <!-- toc -->
+
+# Comandos Windows
+
+## Netstat
+
+### Ejecute y diga par que sirve el comando netstat -an
+
+`netstat` utiliza la bandera `-a` para mostrar todas las conexiones y los puertos en escucha, y la opción `-n` le indica que muestre las direcciones y los números de puerto en formato numérico.
+
+```bash
+C:\Users\user>netstat -an
+
+Conexiones activas
+
+  Proto  Dirección local        Dirección remota       Estado
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49672          0.0.0.0:0              LISTENING
+  TCP    192.168.2.113:139      0.0.0.0:0              LISTENING
+  TCP    192.168.2.113:49707    20.10.31.115:443       ESTABLISHED
+  TCP    192.168.2.113:49720    20.10.31.115:443       ESTABLISHED
+  TCP    192.168.2.113:49776    189.247.216.162:443    CLOSE_WAIT
+  TCP    192.168.2.113:49805    189.247.216.171:443    CLOSE_WAIT
+  TCP    192.168.2.113:49806    189.247.216.171:443    CLOSE_WAIT
+  TCP    192.168.2.113:49807    189.247.216.171:443    CLOSE_WAIT
+  TCP    192.168.2.113:49808    189.247.216.171:443    CLOSE_WAIT
+  TCP    192.168.2.113:49809    189.247.216.171:443    CLOSE_WAIT
+  TCP    192.168.2.113:49816    192.229.211.108:80     CLOSE_WAIT
+  TCP    192.168.2.113:49827    8.50.15.30:80          ESTABLISHED
+  TCP    192.168.2.113:49828    8.50.15.30:80          ESTABLISHED
+  TCP    192.168.2.113:49831    40.119.46.46:443       TIME_WAIT
+  TCP    192.168.2.113:49832    52.168.112.66:443      TIME_WAIT
+  TCP    192.168.2.113:49834    104.208.16.90:443      TIME_WAIT
+  TCP    192.168.2.113:49836    52.168.117.170:443     TIME_WAIT
+  TCP    192.168.2.113:49837    13.95.31.18:443        TIME_WAIT
+  TCP    192.168.2.113:49838    23.40.87.155:443       ESTABLISHED
+  TCP    192.168.2.113:49839    23.40.89.35:443        ESTABLISHED
+  TCP    192.168.2.113:49840    23.40.89.35:443        ESTABLISHED
+  TCP    192.168.2.113:49841    208.111.157.64:80      ESTABLISHED
+  TCP    192.168.2.113:49842    23.40.89.35:443        ESTABLISHED
+  TCP    192.168.2.113:49843    8.50.15.190:80         ESTABLISHED
+  TCP    192.168.2.113:49844    8.50.15.254:80         ESTABLISHED
+  TCP    192.168.2.113:49845    52.143.87.28:443       ESTABLISHED
+  TCP    [::]:135               [::]:0                 LISTENING
+  TCP    [::]:445               [::]:0                 LISTENING
+  TCP    [::]:7680              [::]:0                 LISTENING
+  TCP    [::]:49664             [::]:0                 LISTENING
+  TCP    [::]:49665             [::]:0                 LISTENING
+  TCP    [::]:49666             [::]:0                 LISTENING
+  TCP    [::]:49667             [::]:0                 LISTENING
+  TCP    [::]:49668             [::]:0                 LISTENING
+  TCP    [::]:49672             [::]:0                 LISTENING
+  UDP    0.0.0.0:5050           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5355           *:*
+  UDP    127.0.0.1:54794        *:*
+  UDP    192.168.2.113:137      *:*
+  UDP    192.168.2.113:138      *:*
+  UDP    [::]:5353              *:*
+  UDP    [::]:5355              *:*
+```
+
+### Ejecute y diga para que sirve el comando `netstat -o`
+
+El comando `netstat -o` se utiliza para mostrar las conexiones de red activas y los identificadores de proceso (PID) para cada conexión. Este comando es útil para identificar qué procesos están utilizando qué conexiones de red
+
+```bash
+C:\Users\user>netstat -o
+
+Conexiones activas
+
+  Proto  Dirección local          Dirección remota        Estado           PID
+  TCP    127.0.0.1:49862        DESKTOP-DQP1BRI:49863  ESTABLISHED     6472
+  TCP    127.0.0.1:49863        DESKTOP-DQP1BRI:49862  ESTABLISHED     6472
+  TCP    127.0.0.1:49864        DESKTOP-DQP1BRI:49865  ESTABLISHED     3104
+  TCP    127.0.0.1:49865        DESKTOP-DQP1BRI:49864  ESTABLISHED     3104
+  TCP    192.168.0.106:49958    104.18.13.33:https     ESTABLISHED     6472
+  TCP    192.168.0.106:49962    20.7.1.246:https       ESTABLISHED     3508
+  TCP    192.168.0.106:49964    82:http                ESTABLISHED     6472
+  TCP    192.168.0.106:49966    82:http                ESTABLISHED     6472
+  TCP    192.168.0.106:49967    140:https              ESTABLISHED     6472
+  TCP    192.168.0.106:49968    8.50.5.254:http        ESTABLISHED     696
+  TCP    192.168.0.106:49969    8.50.13.126:http       ESTABLISHED     696
+  TCP    192.168.0.106:49970    20.7.1.246:https       ESTABLISHED     3508
+  TCP    192.168.0.106:49971    55:https               ESTABLISHED     6472
+  TCP    192.168.0.106:49972    cdn-185-199-108-153:https  ESTABLISHED     6472
+  TCP    192.168.0.106:49974    55:https               ESTABLISHED     6472
+  TCP    192.168.0.106:49986    151.101.2.133:http     TIME_WAIT       0
+  TCP    192.168.0.106:49991    lb-140-82-114-5-iad:https  ESTABLISHED     6472
+  TCP    192.168.0.106:49993    192.229.211.108:http   TIME_WAIT       0
+  TCP    192.168.0.106:49994    192.229.211.108:http   TIME_WAIT       0
+```
+
+### Ejecute y diga para que sirve el comando netstat -b
+
+El comando `netstat -b` se usa para mostrar las conexiones de red activas y los nombres de los ejecutables que están utilizando esas conexiones.
+
+```bash
+C:\Windows\system32>netstat -b
+
+Conexiones activas
+
+  Proto  Dirección local        Dirección remota       Estado
+  TCP    127.0.0.1:49862        DESKTOP-DQP1BRI:49863  ESTABLISHED
+ [firefox.exe]
+  TCP    127.0.0.1:49863        DESKTOP-DQP1BRI:49862  ESTABLISHED
+ [firefox.exe]
+  TCP    127.0.0.1:49864        DESKTOP-DQP1BRI:49865  ESTABLISHED
+ [firefox.exe]
+  TCP    127.0.0.1:49865        DESKTOP-DQP1BRI:49864  ESTABLISHED
+ [firefox.exe]
+  TCP    192.168.0.106:49958    104.18.13.33:https     TIME_WAIT
+  TCP    192.168.0.106:49962    20.7.1.246:https       ESTABLISHED
+  WpnService
+ [svchost.exe]
+  TCP    192.168.0.106:49964    82:http                TIME_WAIT
+  TCP    192.168.0.106:49966    82:http                TIME_WAIT
+  TCP    192.168.0.106:49967    140:https              ESTABLISHED
+ [firefox.exe]
+  TCP    192.168.0.106:49968    8.50.5.254:http        ESTABLISHED
+ No se puede obtener información de propiedad
+  TCP    192.168.0.106:49969    8.50.13.126:http       ESTABLISHED
+ No se puede obtener información de propiedad
+```
+
+### Ejecute y diga para que sirve el comando netstat -nabo > informe.txt
+
+El comando `netstat -nabo` hace todo lo anterior mostrado pero en una sola salida, ademas guarda el resultado en un archivo `informe.txt`.
+
+crea un archivo `informe.txt` que contiene lo siguiente:
+
+```bash
+Conexiones activas
+
+  Proto  Direcci¢n local          Direcci¢n remota        Estado           PID
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       1052
+  RpcEptMapper
+ [svchost.exe]
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+ No se puede obtener informaci¢n de propiedad
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING       4000
+  CDPSvc
+ [svchost.exe]
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING       696
+ No se puede obtener informaci¢n de propiedad
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       980
+ [lsass.exe]
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       832
+ No se puede obtener informaci¢n de propiedad
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       1944
+  Schedule
+ [svchost.exe]
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       1464
+  EventLog
+ [svchost.exe]
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       2160
+ [spoolsv.exe]
+  TCP    0.0.0.0:49672          0.0.0.0:0              LISTENING       952
+ No se puede obtener informaci¢n de propiedad
+  TCP    127.0.0.1:49862        127.0.0.1:49863        ESTABLISHED     6472
+ [firefox.exe]
+  TCP    127.0.0.1:49863        127.0.0.1:49862        ESTABLISHED     6472
+ [firefox.exe]
+  TCP    127.0.0.1:49864        127.0.0.1:49865        ESTABLISHED     3104
+ [firefox.exe]
+  TCP    127.0.0.1:49865        127.0.0.1:49864        ESTABLISHED     3104
+ [firefox.exe]
+  TCP    192.168.0.106:139      0.0.0.0:0              LISTENING       4
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:49962    20.7.1.246:443         ESTABLISHED     3508
+  WpnService
+ [svchost.exe]
+  TCP    192.168.0.106:49970    20.7.1.246:443         ESTABLISHED     3508
+  WpnService
+ [svchost.exe]
+  TCP    192.168.0.106:49974    34.117.65.55:443       ESTABLISHED     6472
+ [firefox.exe]
+  TCP    192.168.0.106:50028    72.21.81.240:80        ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50029    72.21.81.240:80        ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50046    34.120.208.123:443     TIME_WAIT       0
+  TCP    192.168.0.106:50049    35.244.181.201:443     TIME_WAIT       0
+  TCP    192.168.0.106:50050    34.160.144.191:443     TIME_WAIT       0
+  TCP    192.168.0.106:50059    52.143.80.209:443      TIME_WAIT       0
+  TCP    192.168.0.106:50060    34.117.237.239:443     TIME_WAIT       0
+  TCP    192.168.0.106:50061    8.50.13.126:80         ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50062    8.50.5.254:80          ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50070    23.200.36.137:443      ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50073    23.40.151.182:443      ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50087    209.197.3.8:80         TIME_WAIT       0
+  TCP    192.168.0.106:50090    72.21.81.200:443       ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50091    204.79.197.222:443     ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50092    200.25.83.0:80         TIME_WAIT       0
+  TCP    192.168.0.106:50093    52.168.112.67:443      TIME_WAIT       0
+  TCP    192.168.0.106:50094    52.168.112.67:443      TIME_WAIT       0
+  TCP    192.168.0.106:50095    209.197.3.8:80         TIME_WAIT       0
+  TCP    192.168.0.106:50096    13.107.42.254:443      ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50097    72.21.81.200:443       ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50098    52.113.196.254:443     ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50102    209.197.3.8:80         TIME_WAIT       0
+  TCP    192.168.0.106:50104    13.85.23.206:443       TIME_WAIT       0
+  TCP    192.168.0.106:50105    20.42.65.85:443        TIME_WAIT       0
+  TCP    192.168.0.106:50106    23.40.151.182:443      ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50108    200.25.83.0:80         TIME_WAIT       0
+  TCP    192.168.0.106:50109    200.25.83.0:80         TIME_WAIT       0
+  TCP    192.168.0.106:50110    200.25.83.0:80         TIME_WAIT       0
+  TCP    192.168.0.106:50111    13.107.246.57:443      ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50112    13.107.213.57:443      ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50113    200.25.83.0:80         TIME_WAIT       0
+  TCP    192.168.0.106:50114    23.32.150.21:443       ESTABLISHED     6604
+ [SearchApp.exe]
+  TCP    192.168.0.106:50115    102.37.64.170:443      TIME_WAIT       0
+  TCP    192.168.0.106:50116    102.37.64.170:443      TIME_WAIT       0
+  TCP    192.168.0.106:50117    40.65.209.51:443       TIME_WAIT       0
+  TCP    192.168.0.106:50119    102.37.64.170:443      TIME_WAIT       0
+  TCP    192.168.0.106:50120    23.40.151.182:443      ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50121    23.40.151.182:443      ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50123    23.65.172.98:443       ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50124    8.50.13.126:80         TIME_WAIT       0
+  TCP    192.168.0.106:50125    8.50.12.254:80         TIME_WAIT       0
+  TCP    192.168.0.106:50126    52.184.216.226:443     ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50129    52.168.112.67:443      TIME_WAIT       0
+  TCP    192.168.0.106:50130    13.85.23.206:443       TIME_WAIT       0
+  TCP    192.168.0.106:50131    52.168.112.67:443      TIME_WAIT       0
+  TCP    192.168.0.106:50132    23.40.151.182:443      ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50134    8.50.13.126:80         TIME_WAIT       0
+  TCP    192.168.0.106:50135    8.50.13.126:80         TIME_WAIT       0
+  TCP    192.168.0.106:50137    200.25.83.0:80         TIME_WAIT       0
+  TCP    192.168.0.106:50139    23.40.151.182:443      ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50140    200.25.83.0:80         ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50142    200.25.83.0:80         ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50143    8.50.13.126:80         ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    192.168.0.106:50144    8.50.13.126:80         ESTABLISHED     696
+ No se puede obtener informaci¢n de propiedad
+  TCP    [::]:135               [::]:0                 LISTENING       1052
+  RpcEptMapper
+ [svchost.exe]
+  TCP    [::]:445               [::]:0                 LISTENING       4
+ No se puede obtener informaci¢n de propiedad
+  TCP    [::]:7680              [::]:0                 LISTENING       696
+ No se puede obtener informaci¢n de propiedad
+  TCP    [::]:49664             [::]:0                 LISTENING       980
+ [lsass.exe]
+  TCP    [::]:49665             [::]:0                 LISTENING       832
+ No se puede obtener informaci¢n de propiedad
+  TCP    [::]:49666             [::]:0                 LISTENING       1944
+  Schedule
+ [svchost.exe]
+  TCP    [::]:49667             [::]:0                 LISTENING       1464
+  EventLog
+ [svchost.exe]
+  TCP    [::]:49668             [::]:0                 LISTENING       2160
+ [spoolsv.exe]
+  TCP    [::]:49672             [::]:0                 LISTENING       952
+ No se puede obtener informaci¢n de propiedad
+  UDP    0.0.0.0:5050           *:*                                    4000
+  CDPSvc
+ [svchost.exe]
+  UDP    0.0.0.0:5353           *:*                                    2448
+  Dnscache
+ [svchost.exe]
+  UDP    0.0.0.0:5355           *:*                                    2448
+  Dnscache
+ [svchost.exe]
+  UDP    127.0.0.1:54794        *:*                                    3600
+  iphlpsvc
+ [svchost.exe]
+  UDP    192.168.0.106:137      *:*                                    4
+ No se puede obtener informaci¢n de propiedad
+  UDP    192.168.0.106:138      *:*                                    4
+ No se puede obtener informaci¢n de propiedad
+  UDP    [::]:5353              *:*                                    2448
+  Dnscache
+ [svchost.exe]
+  UDP    [::]:5355              *:*                                    2448
+  Dnscache
+ [svchost.exe]
+```
+
+## NSLOOKUP
+
+### Ejecute el comando nslookup
+
+```bash
+C:\Users\user>nslookup
+Servidor predeterminado:  UnKnown
+Address:  192.168.0.1
+
+> mail.google.com
+Servidor:  UnKnown
+Address:  192.168.0.1
+```
+
+### Ejecute y anote los resultados de nslookup mail.google.com
+
+```bash
+C:\Users\user>nslookup mail.google.com
+Servidor:  UnKnown
+Address:  192.168.0.1
+
+Respuesta no autoritativa:
+Nombre:  mail.google.com
+Addresses:  2607:f8b0:4012:821::2005
+          192.178.52.165
+```
+
+### Ejecute y anote los resultados de jecutar nslookup 173.194.46.21
+
+En la siguiente ip no encontró el dominio
+
+```bash
+C:\Windows\system32>nslookup 173.194.46.21
+Servidor:  UnKnown
+Address:  192.168.0.1
+
+*** UnKnown no encuentra 173.194.46.21: Non-existent domain
+```
+
+Intentando con otra ip
+
+```bash
+C:\Windows\system32>nslookup 69.162.81.155
+Servidor:  UnKnown
+Address:  192.168.0.1
+
+Nombre:  dmagenttx.dotcom-monitor.com
+Address:  69.162.81.155
+```
+
+### Ejecute y anote los resultado de nslookup www.buap.mx
+
+```bash
+C:\Windows\system32>nslookup www.buap.mx
+Servidor:  UnKnown
+Address:  192.168.0.1
+
+Respuesta no autoritativa:
+Nombre:  eskew3g.x.incapdns.net
+Address:  45.60.113.125
+Aliases:  www.buap.mx
+```
+
+### Ejecute y anote los resultados de nslookup 148.228.20.2
+
+Indica nuevamente que el dominio no existe, intentando con otro
+
+```bash
+C:\Windows\system32>nslookup 148.228.20.2
+Servidor:  UnKnown
+Address:  192.168.0.1
+
+*** UnKnown no encuentra 148.228.20.2: Non-existent domain
+```
+
+```bash
+C:\Windows\system32>nslookup 162.254.206.227
+Servidor:  UnKnown
+Address:  192.168.0.1
+
+Nombre:  DMAGENTFL.dotcom-monitor.com
+Address:  162.254.206.227
+```
+
+## Route
+
+### Ejecute route print y anote los títulos de las columnas de las tablas de enrutamiento IPV4
+
+```bash
+C:\Windows\system32>route print
+===========================================================================
+ILista de interfaces
+  8...f0 2f 74 cc fe 5c ......Realtek PCIe GbE Family Controller
+ 10...2a ee 52 14 17 b7 ......Microsoft Wi-Fi Direct Virtual Adapter
+  9...28 ee 52 14 17 b7 ......Microsoft Wi-Fi Direct Virtual Adapter #2
+ 16...28 ee 52 14 17 b7 ......TP-Link High Power Wireless USB Adapter
+  1...........................Software Loopback Interface 1
+===========================================================================
+
+IPv4 Tabla de enrutamiento
+===========================================================================
+Rutas activas:
+Destino de red        Máscara de red   Puerta de enlace   Interfaz  Métrica
+          0.0.0.0          0.0.0.0      192.168.0.1    192.168.0.106     40
+        127.0.0.0        255.0.0.0      En vínculo         127.0.0.1    331
+        127.0.0.1  255.255.255.255      En vínculo         127.0.0.1    331
+  127.255.255.255  255.255.255.255      En vínculo         127.0.0.1    331
+      192.168.0.0    255.255.255.0      En vínculo     192.168.0.106    296
+    192.168.0.106  255.255.255.255      En vínculo     192.168.0.106    296
+    192.168.0.255  255.255.255.255      En vínculo     192.168.0.106    296
+        224.0.0.0        240.0.0.0      En vínculo         127.0.0.1    331
+        224.0.0.0        240.0.0.0      En vínculo     192.168.0.106    296
+  255.255.255.255  255.255.255.255      En vínculo         127.0.0.1    331
+  255.255.255.255  255.255.255.255      En vínculo     192.168.0.106    296
+===========================================================================
+Rutas persistentes:
+  Ninguno
+
+IPv6 Tabla de enrutamiento
+===========================================================================
+Rutas activas:
+ Cuando destino de red métrica      Puerta de enlace
+  1    331 ::1/128                  En vínculo
+ 16    296 fe80::/64                En vínculo
+ 16    296 fe80::8315:b7f7:8d99:e169/128
+                                    En vínculo
+  1    331 ff00::/8                 En vínculo
+ 16    296 ff00::/8                 En vínculo
+===========================================================================
+Rutas persistentes:
+  Ninguno
+```
+
+### Ejecuta y diga para que sirve route print 148*
+
+```bash
+C:\Windows\system32>route print 148*
+===========================================================================
+ILista de interfaces
+  8...f0 2f 74 cc fe 5c ......Realtek PCIe GbE Family Controller
+ 10...2a ee 52 14 17 b7 ......Microsoft Wi-Fi Direct Virtual Adapter
+  9...28 ee 52 14 17 b7 ......Microsoft Wi-Fi Direct Virtual Adapter #2
+ 16...28 ee 52 14 17 b7 ......TP-Link High Power Wireless USB Adapter
+  1...........................Software Loopback Interface 1
+===========================================================================
+
+IPv4 Tabla de enrutamiento
+===========================================================================
+Rutas activas:
+  Ninguno
+Rutas persistentes:
+  Ninguno
+
+IPv6 Tabla de enrutamiento
+===========================================================================
+Rutas activas:
+  Ninguno
+Rutas persistentes:
+  Ninguno
+```
+
+### Visite el sitio http://www.iana.org
+
+Los servicios que corren en el puerto 80 son la World Wide Web (http)
+
+```bash
+http 	80 	tcp 	World Wide Web HTTP 	[IESG] 	[IETF_Chair] 		2021-10-01 	[RFC9110] 			Defined TXT keys: u=<username> p=<password> path=<path to document>
+http 	80 	udp 	World Wide Web HTTP 	[IESG] 	[IETF_Chair] 		2021-10-01 	[RFC9110] 			Defined TXT keys: u=<username> p=<password> path=<path to document>
+www 	80 	tcp 	World Wide Web HTTP 	[IESG] 	[IETF_Chair] 		2021-10-01 	[RFC9110] 			This is a duplicate of the "http" service and should not be used for discovery purposes.
+www 	80 	udp 	World Wide Web HTTP 	[IESG] 	[IETF_Chair] 		2021-10-01 	[RFC9110] 			This is a duplicate of the "http" service and should not be used for discovery purposes.
+www-http 	80 	tcp 	World Wide Web HTTP 	[Tim_Berners_Lee] 	[Tim_Berners_Lee] 				
+```
+
+Los servicios que corren sobre el puerto 21 son FTP
+
+```bash
+ftp 	21 	tcp 	File Transfer Protocol [Control] 	[Jon_Postel] 	[Jon_Postel] 			[RFC959] 			Defined TXT keys: u=<username> p=<password> path=<path>
+ftp 	21 	udp 	File Transfer Protocol [Control] 	[Jon_Postel] 	[Jon_Postel] 			[RFC959] 			Defined TXT keys: u=<username> p=<password> path=<path>
+ftp 	21 	sctp 	FTP 	[Randall_Stewart] 	[Randall_Stewart] 		2022-02-07 	[RFC9260] 			Defined TXT keys: u=<username> p=<password> path=<path>
+```
+
+En el puerto 22 corren los servicios son SSH
+
+```bash
+ssh 	22 	tcp 	The Secure Shell (SSH) Protocol 					[RFC4251] 			Defined TXT keys: u=<username> p=<password>
+ssh 	22 	udp 	The Secure Shell (SSH) Protocol 					[RFC4251] 			Defined TXT keys: u=<username> p=<password>
+ssh 	22 	sctp 	SSH 	[Randall_Stewart] 	[Randall_Stewart] 		2022-02-07 	[RFC9260] 			Defined TXT keys: u=<username> p=<password>
+```
+
+En el puerto 25 corren los servicios Simple Mail Transfer (smtp)
+
+```bash
+smtp 	25 	tcp 	Simple Mail Transfer 	[IESG] 	[IETF_Chair] 		2017-06-05 	[RFC5321] 			
+smtp 	25 	udp 	Simple Mail Transfer 	[IESG] 	[IETF_Chair] 		2017-06-05 	[RFC5321] 		
+```
+
+<!-- pagina: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=25 -->
 
 # Comandos Linux
 
