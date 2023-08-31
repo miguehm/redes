@@ -1,4 +1,4 @@
-# Conversión Binario a Decimal**
+# Conversión Binario a Decimal
 
 10010010 = 146
 
